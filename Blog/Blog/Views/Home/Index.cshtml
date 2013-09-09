@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="example" class="k-content">
+    <div id="window">
+        <h4>
+            Title</h4>
+        <input type="text" data-bind="value: $root.Title" />
+        <p>
+            Description</p>
+        <input type="text" id="txtsal" data-bind="value: $root.Description" />
+        <p>
+            <button class="btn" data-bind="click :$root.save">Save</button>
+            <button class="btn" data-bind="click: $root.update">Update</button>
+        </p>
+    </div>
+    <span id="undo" style="display: none" class="btn btn-success">Create</span>
+</div>
+<div class="FixedContainer">
+    <!--If the lenght of the Employees is greater than 0 then visible the Table-->
+    <div data-bind="visible:  AllPosts().length>0">
+        <section data-bind="foreach:  AllPosts">
+            <article data-bind="click: $root.getselectedpost" id="updtr">
+                <p>
+                    <span data-bind="text:  Title"></span>
+                </p>
+                <p>
+                    <span data-bind="text: Description"></span>
+                </p>
+                <p>
+                    <button class="btn" data-bind="click: $root.deleterec">Delete</button>
+                    <button class="btn" id="undo">Edit</button>
+                </p>
+                <hr />
+            </article>
+        </section>
+    </div>
+</div>

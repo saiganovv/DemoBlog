@@ -1,0 +1,9 @@
+﻿a.username{
+    float:left;
+    margin: 10px;
+}
+
+header>div.container-fluid>form{
+    margin: 0;
+    float: left;
+}
